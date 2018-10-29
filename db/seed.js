@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const db = require('./index.js');
 
-const range = function (start, stop, step) {
+const range = (start, stop, step) => {
   step = step || 1;
   let result = [];
   for (let i = start; i <= stop; i += step) {
@@ -11,7 +11,7 @@ const range = function (start, stop, step) {
   return result;
 };
 
-const generator = function (amount) {
+const generator = amount => {
 
   amount = amount || 1;
 
@@ -59,7 +59,7 @@ const generator = function (amount) {
   ' sit amet luctus venenatis lectus. Sapien pellentesque habitant morbi tristique senectus et. Mauris cursus mattis molestie a iaculis' +
   ' at erat pellentesque. In nisl nisi scelerisque eu ultrices vitae auctor eu augue. Odio tempor orci dapibus ultrices in iaculis nunc.']; // length of 5
 
-  let random = function (array) {
+  let random = array => {
     return Math.floor(Math.random() * array.length);
   };
 
@@ -82,10 +82,9 @@ const generator = function (amount) {
   return docsArray;
 };
 
-let documents = generator(500)/*?*/;
+const documents = generator(500)/*?*/;
 
 db.overview.create(documents);
-
 
 /*
   let area1br = range(1000, 1600, 50);

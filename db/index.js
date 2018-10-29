@@ -20,6 +20,6 @@ let overviewSchema = mongoose.Schema({
   description: String
 });
 
-let overview = mongoose.model('overview', overviewSchema);
+const overview = mongoose.model('overview', overviewSchema);
 
 module.exports.overview = overview;
