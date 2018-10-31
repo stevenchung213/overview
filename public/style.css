@@ -1,0 +1,42 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+li {
+    float: left;
+    display: block;
+    color: dodgerblue;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a {
+    display: block;
+    color: dodgerblue;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+#main-container {
+    width: 65%;
+
+}
+
+#headline {
+    color: #505966;
+}
+
+#minimap {
+    background-image: url("minimap.png");
+}
