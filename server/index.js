@@ -10,9 +10,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname + '/../public')));
 
-app.get('/', (req, res) => {
-  res.redirect('index.html')
-});
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/../public/index.html'));
+// });
 
 app.get('/listings', (req, res) => {
   let getDbData = (callback) => {
@@ -27,16 +27,22 @@ app.get('/listings', (req, res) => {
   };
   getDbData(result => {
     console.log('sending db results')
-    res.status(200).sendFile('index.html', {root: './public'});
-  })
+    res.status(200).send(result);
+  });
+});
+
+app.get('/:propertyID', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../public/index.html'));
 });
 
 app.get('/listings/:propertyID', (req, res) => {
-  console.log(req.params)
-  let propID = req.params.propertyID;
-  overview.find({propertyID: propID}).exec()
+  overview.find({propertyID: req.params.propertyID}).exec()
     .then(result => res.status(200).send(result))
     .catch(err => console.log('ERROR \n', err));
+});
+
+
+
   // let getSpecificListing = (callback) => {
   //   overview.find({ propertyID: propID }, (err, doc) => {
   //     if (err) {
@@ -50,8 +56,7 @@ app.get('/listings/:propertyID', (req, res) => {
   // getSpecificListing(result => {
   //   console.log('sending specific db result')
   //   res.sendfile('index.html', result);
-  // })
-});
+
 
 
 

@@ -2,24 +2,30 @@ import React from 'react';
 import $ from 'jquery';
 
 
-
 export default class Overview extends React.Component {
   constructor() {
     super();
 
     this.state = {
       init: false,
-      properties: null
+      property: null
     };
 
   }
 
   componentDidMount() {
-    $.get('/listings', result => {
-      console.log('success ', result)
-      this.setState({properties: result, init: true})
-    }, 'json');
-
+    let propertyID = Number(window.location.pathname.replace(/\//, ''));
+    if (propertyID > 0) {
+      $.get('/listings/' + propertyID, result => {
+        console.log(result)
+        this.setState({property: result[0], init: true})
+      })
+    } else {
+      $.get('/listings', result => {
+        console.log('success ', result)
+        this.setState({property: result[0], init: true})
+      }, 'json');
+    }
   }
 
   render() {
@@ -35,42 +41,51 @@ export default class Overview extends React.Component {
               <li className=""><a href="#map">Map</a></li>
               <li className=""><a href="#availability">Availability</a></li>
             </ul>
-
-            <div>
-              <span id="minimap"></span>
-
-              <h2 id="headline">{this.state.properties[0].headline}</h2>
+            <div id="minimap-container">
+              <div id="minimap"></div>
+              <h2 id="headline">
+                {this.state.property.headline}
+              </h2>
             </div>
             <section className="icon-bar">
-              <div id="icons">
+              <div id="icons-container">
                 <ul>
-                  <li id="type">
-                    <span>{this.state.properties[0].type}</span>
-                    <span>{this.state.properties[0].area}</span>
+                  <li id="type" className="icons">
+                    <span>{this.state.property.type}</span>
+                    <span>{this.state.property.area}</span>
                   </li>
-                  <li id="bedrooms">
+                  <li id="bedrooms" className="icons">
                     <span>Bedrooms</span>
-                    <span>{this.state.properties[0].bedrooms}</span></li>
-                  <li id="sleeps">
+                    <span>{this.state.property.bedrooms}</span></li>
+                  <li id="sleeps" className="icons">
                     <span>Sleeps</span>
-                    <span>{this.state.properties[0].sleeps}</span>
+                    <span>{this.state.property.sleeps}</span>
                   </li>
-                  <li id="bathrooms">
+                  <li id="bathrooms" className="icons">
                     <span>Bathrooms</span>
-                    <span>{this.state.properties[0].bathrooms}</span>
+                    <span>{this.state.property.bathrooms}</span>
                   </li>
-                  <li id="halfbaths">
+                  <li id="halfbaths" className="icons">
                     <span>Half Baths</span>
-                    <span>{this.state.properties[0].halfBaths}</span>
+                    <span>{this.state.property.halfBaths}</span>
                   </li>
-                  <li id="minstay">
+                  <li id="minstay" className="icons">
                     <span>Min Stay</span>
-                    <span>{this.state.properties[0].minStay}</span>
+                    <span>{this.state.property.minStay}</span>
                   </li>
                 </ul>
               </div>
+              <div className="description-container">
+                <h3 id='brief'>
+                  {this.state.property.brief}
+                </h3>
+                <div className="description-box">
+                  <p id="description">
+                    {this.state.property.description}
+                  </p>
+                </div>
+              </div>
             </section>
-
           </div>
         </div>)
         }
