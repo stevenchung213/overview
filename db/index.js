@@ -5,11 +5,12 @@ let db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('Mongo DB is running');
+  console.log('Mongo DB is connected and running');
 });
 
 let overviewSchema = mongoose.Schema({
   propertyID: Number,
+  headline: String,
   type: String,
   area: Number,
   bedrooms: Number,
@@ -17,9 +18,13 @@ let overviewSchema = mongoose.Schema({
   bathrooms: Number,
   halfBaths: Number,
   minStay: Number,
-  description: String
+  brief: String,
+  description: String,
+  owner: String,
+  phone: String
 });
 
 const overview = mongoose.model('overview', overviewSchema);
 
+module.exports.db = db;
 module.exports.overview = overview;

@@ -1,0 +1,101 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+li {
+    float: left;
+    display: block;
+    color: dodgerblue;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a {
+    display: block;
+    color: dodgerblue;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    white-space: nowrap;
+}
+
+/*#nav-bar {*/
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
+    /*max-width: 100%;*/
+    /*min-width: 65em;*/
+/*}*/
+.nav-bar-list {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+    min-width: 40em;
+}
+
+#main-container {
+    width: 65%;
+}
+
+#minimap-container {
+    height: 10em;
+    flex-flow: row;
+}
+
+#headline {
+    color: #40464b;
+}
+
+#minimap {
+    float: left;
+    padding-right: 1em;
+    background: url('minimap.png') no-repeat;
+    height: 79px;
+    width: 79px;
+}
+
+#brief {
+    color: #494f54;
+}
+
+.icons {
+    color: #83898e;
+}
+
+p {
+    color: #83898e;
+}
+
+#type {
+    background: url('type.png') no-repeat;
+
+}
+
+#bedrooms {
+    background: url('bedrooms.png') no-repeat;
+}
+
+#sleeps {
+    background: url('sleeps.png') no-repeat;
+}
+
+#bathrooms {
+    background: url('bathrooms.png') no-repeat;
+}
+
+#halfbaths {
+    background: url('halfbaths.png') no-repeat;
+}
+
+#minstay {
+    background: url('minstay.png') no-repeat;
+}
