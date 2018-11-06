@@ -16,7 +16,6 @@ const generator = amount => {
   amount = amount || 1;
 
   let docsArray = [];
-
   let headlines = [ 'In tempor turpis nec euismod scelerisque quam',
     'Mauris ullamcorper purus sit amet nulla',
     'Nec nisi vulputate nonummy maecenas',
@@ -117,12 +116,13 @@ const generator = amount => {
     'Rhoncus aliquam lacus morbi quis tortor id',
     'Elit sodales scelerisque mauris sit amet eros suspendisse',
     'Est phasellus sit amet erat nulla tempus vivamus in' ];
+  let location = ['Echo Park, Los Angeles, CA, USA', 'Silver Lake, Los Angeles, CA, USA', 'Beverly Hills, Los Angeles, CA, USA', 'Inglewood, Los Angeles, CA, USA', 'Westlake, Los Angeles, CA, USA', 'Windham, Woodstock, NY, USA', 'Olive, Woodstock, NY, USA', 'Shandaken, Woodstock, NY, USA', 'Middletown, Woodstock, NY, USA', 'Harrisburg, Hershey, PA, USA', 'Carlisle, Hershey, PA, USA', 'Winthrop, Boston, MA, USA',  'Everette, Boston, MA, USA', 'Revere, Boston, MA, USA',  'Cambridge, Boston, MA, USA',  'Canton, Boston, MA, USA',  'Needham, Boston, MA, USA',  'Watertown, Boston, MA, USA',  'Newton, Boston, MA, USA'];
   let types = ['House', 'Condo', 'Apartment', 'Townhouse', 'Cabin'];
   let area = range(1300, 4000, 50);
   let brCount = range(1, 5);
   let sleeps = range(1, 10);
   let bathCount = range(1, 5);
-  let halfbathCount = range(1, 3);
+  let halfbathCount = range(0, 3);
   let minStay = range(1, 3);
   let brief = headlines;
   let propDesc = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna' +
@@ -133,7 +133,7 @@ const generator = amount => {
   ' morbi tristique. Et malesuada fames ac turpis egestas integer eget. Risus commodo viverra maecenas accumsan lacus vel facilisis.' +
   ' Pellentesque adipiscing commodo elit at imperdiet dui. Leo a diam sollicitudin tempor id eu. Quis lectus nulla at volutpat diam ut' +
   ' venenatis tellus in. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Varius vel pharetra vel turpis nunc. Amet purus' +
-  ' gravida quis blandit turpis cursus in hac habitasse.', 'Varius duis at consectetur lorem donec massa sapien faucibus. Dignissim' +
+  ' gravida quis blandit turpis cursus in hac habitasse.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Cras semper auctor neque vitae tempus. Orci phasellus egestas tellus rutrum tellus pellentesque eu. Tincidunt id aliquet risus feugiat in ante metus dictum at. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Nulla at volutpat diam ut venenatis tellus in metus. Et odio pellentesque diam volutpat. Urna molestie at elementum eu facilisis sed odio morbi. Venenatis a condimentum vitae sapien pellentesque habitant morbi tristique. Et malesuada fames ac turpis egestas integer eget. Risus commodo viverra maecenas accumsan lacus vel facilisis. Pellentesque adipiscing commodo elit at imperdiet dui. Leo a diam sollicitudin tempor id eu. Quis lectus nulla at volutpat diam ut venenatis tellus in. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Varius vel pharetra vel turpis nunc. Amet purus gravida quis blandit turpis cursus in hac habitasse.', 'Varius duis at consectetur lorem donec massa sapien faucibus. Dignissim' +
   ' sodales ut eu sem integer vitae. Urna molestie at elementum eu facilisis sed odio morbi. Ac tincidunt vitae semper quis lectus nulla' +
   ' at volutpat diam. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. Eget egestas purus viverra accumsan. Libero nunc' +
   ' consequat interdum varius sit amet mattis vulputate. Arcu bibendum at varius vel pharetra vel turpis. Vel elit scelerisque mauris' +
@@ -141,13 +141,14 @@ const generator = amount => {
   ' enim eu turpis. Eu lobortis elementum nibh tellus molestie. Sit amet nisl suscipit adipiscing. Diam maecenas ultricies mi eget mauris' +
   ' pharetra. Eget nunc scelerisque viverra mauris. Vulputate odio ut enim blandit volutpat maecenas. Lacus viverra vitae congue eu' +
   ' consequat ac. Nisl suscipit adipiscing bibendum est ultricies. Netus et malesuada fames ac turpis egestas. Eget felis eget nunc' +
-  ' lobortis mattis aliquam faucibus purus.', 'Scelerisque fermentum dui faucibus in ornare quam. Ac tortor dignissim convallis aenean et' +
-  ' tortor at risus. Purus sit amet luctus venenatis. Tempus egestas sed sed risus pretium. Ac ut consequat semper viverra nam libero' +
-  ' justo laoreet. Velit ut tortor pretium viverra suspendisse potenti nullam. Etiam tempor orci eu lobortis elementum nibh tellus' +
+  ' lobortis mattis aliquam faucibus purus.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt' +
+  ' ut labore et dolore magna aliqua. Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Cras' +
+  ' semper auctor neque vitae tempus. Orci phasellus egestas tellus rutrum tellus pellentesque eu. Tincidunt id aliquet risus feugiat in' +
+  ' ante metus dictum at. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Nulla at volutpat diam ut venenatis tellus in metus. Et odio pellentesque diam volutpat. Urna molestie at elementum eu facilisis sed odio morbi. Venenatis a condimentum vitae sapien pellentesque habitant morbi tristique. Et malesuada fames ac turpis egestas integer eget. Risus commodo viverra maecenas accumsan lacus vel facilisis. Pellentesque adipiscing commodo elit at imperdiet dui. Leo a diam sollicitudin tempor id eu. Quis lectus nulla at volutpat diam ut venenatis tellus in. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Varius vel pharetra vel turpis nunc. Amet purus gravida quis blandit turpis cursus in hac habitasse.', 'Scelerisque fermentum dui faucibus in ornare quam. Ac tortor dignissim convallis aenean et tortor at risus. Purus sit amet luctus venenatis. Tempus egestas sed sed risus pretium. Ac ut consequat semper viverra nam libero justo laoreet. Velit ut tortor pretium viverra suspendisse potenti nullam. Etiam tempor orci eu lobortis elementum nibh tellus' +
   ' molestie. Erat imperdiet sed euismod nisi porta lorem. Nulla posuere sollicitudin aliquam ultrices. Posuere sollicitudin aliquam' +
   ' ultrices sagittis. Faucibus nisl tincidunt eget nullam non nisi. Enim diam vulputate ut pharetra sit amet aliquam id diam. Est velit' +
   ' egestas dui id ornare arcu odio ut sem. Vitae turpis massa sed elementum tempus. At in tellus integer feugiat scelerisque. Ultricies' +
-  ' mi eget mauris pharetra et ultrices.', 'Gravida cum sociis natoque penatibus et magnis. Mattis molestie a iaculis at erat' +
+  ' mi eget mauris pharetra et ultrices.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Cras semper auctor neque vitae tempus. Orci phasellus egestas tellus rutrum tellus pellentesque eu. Tincidunt id aliquet risus feugiat in ante metus dictum at. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Nulla at volutpat diam ut venenatis tellus in metus. Et odio pellentesque diam volutpat. Urna molestie at elementum eu facilisis sed odio morbi. Venenatis a condimentum vitae sapien pellentesque habitant morbi tristique. Et malesuada fames ac turpis egestas integer eget. Risus commodo viverra maecenas accumsan lacus vel facilisis. Pellentesque adipiscing commodo elit at imperdiet dui. Leo a diam sollicitudin tempor id eu. Quis lectus nulla at volutpat diam ut venenatis tellus in. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Varius vel pharetra vel turpis nunc. Amet purus gravida quis blandit turpis cursus in hac habitasse.', 'Gravida cum sociis natoque penatibus et magnis. Mattis molestie a iaculis at erat' +
   ' pellentesque adipiscing commodo elit. Neque ornare aenean euismod elementum nisi quis. Sit amet justo donec enim diam vulputate ut.' +
   ' Tempor commodo ullamcorper a lacus. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Viverra ipsum nunc aliquet' +
   ' bibendum enim facilisis gravida neque. Ac placerat vestibulum lectus mauris. Nisl pretium fusce id velit ut tortor. Tristique' +
@@ -158,7 +159,9 @@ const generator = amount => {
   ' tincidunt lobortis feugiat vivamus. Senectus et netus et malesuada fames ac turpis.', 'Consectetur purus ut faucibus pulvinar' +
   ' elementum integer. Risus ultricies tristique nulla aliquet enim tortor. Sodales neque sodales ut etiam sit. Elit ut aliquam purus' +
   ' sit amet luctus venenatis lectus. Sapien pellentesque habitant morbi tristique senectus et. Mauris cursus mattis molestie a iaculis' +
-  ' at erat pellentesque. In nisl nisi scelerisque eu ultrices vitae auctor eu augue. Odio tempor orci dapibus ultrices in iaculis nunc.']; // length of 5
+  ' at erat pellentesque. In nisl nisi scelerisque eu ultrices vitae auctor eu augue. Odio tempor orci dapibus ultrices in iaculis nunc.' +
+  '  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' +
+  ' Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Cras semper auctor neque vitae tempus. Orci phasellus egestas tellus rutrum tellus pellentesque eu. Tincidunt id aliquet risus feugiat in ante metus dictum at. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Nulla at volutpat diam ut venenatis tellus in metus. Et odio pellentesque diam volutpat. Urna molestie at elementum eu facilisis sed odio morbi. Venenatis a condimentum vitae sapien pellentesque habitant morbi tristique. Et malesuada fames ac turpis egestas integer eget. Risus commodo viverra maecenas accumsan lacus vel facilisis. Pellentesque adipiscing commodo elit at imperdiet dui. Leo a diam sollicitudin tempor id eu. Quis lectus nulla at volutpat diam ut venenatis tellus in. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Varius vel pharetra vel turpis nunc. Amet purus gravida quis blandit turpis cursus in hac habitasse.']; // length of 5
   let owners = [ 'Mohandas Hatherley',
     'Amelita Boatright',
     'Shelia Chiese',
@@ -369,6 +372,7 @@ const generator = amount => {
     let document = {
       propertyID: i,
       headline: headlines[random(headlines)],
+      location: location[random(location)],
       type: types[random(types)],
       area: area[random(area)],
       bedrooms: brCount[random(brCount)],
@@ -390,5 +394,3 @@ const generator = amount => {
 const documents = generator(100)/*?*/;
 
 overview.create(documents).then(() => overview.disconnect());
-
-

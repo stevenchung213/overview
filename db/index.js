@@ -11,6 +11,7 @@ db.once('open', function() {
 let overviewSchema = mongoose.Schema({
   propertyID: Number,
   headline: String,
+  location: String,
   type: String,
   area: Number,
   bedrooms: Number,

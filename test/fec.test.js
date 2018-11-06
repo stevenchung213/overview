@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-describe('Jest/Enzyme tests', () => {
+describe('Basic Tests', () => {
 
   test('mock test', () => {
     expect(true).toBe(true);

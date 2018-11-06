@@ -1,5 +1,9 @@
 import React from 'react';
 import $ from 'jquery';
+import NavBar from './NavBar.jsx';
+import Headline from './Headline.jsx';
+import Icons from './Icons.jsx';
+import Description from './Description.jsx';
 
 
 export default class Overview extends React.Component {
@@ -10,6 +14,28 @@ export default class Overview extends React.Component {
       init: false,
       property: null
     };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    let p = $('p')[0].scrollHeight;
+
+    $(document).click(e => {
+      e.stopPropagation();
+      $('p').animate({
+        'height': '165px'
+      });
+      $('#view-more').text('View more');
+    });
+
+    $('#view-more').click(e => {
+      e.stopPropagation();
+      $('p').animate({
+        'height': p
+      });
+      $('#view-more').text('View less');
+    });
 
   }
 
@@ -33,64 +59,13 @@ export default class Overview extends React.Component {
       <div>
         {this.state.init &&
         (<div id="main-container">
-          <div id="nav-bar">
-            <ul className="nav-bar-list">
-              <li className="active"><a href="#overview">Overview</a></li>
-              <li className=""><a href="#amenities">Amenities</a></li>
-              <li className=""><a href="#reviews">Reviews</a></li>
-              <li className=""><a href="#map">Map</a></li>
-              <li className=""><a href="#availability">Availability</a></li>
-            </ul>
-            <div id="minimap-container">
-              <div id="minimap"></div>
-              <h2 id="headline">
-                {this.state.property.headline}
-              </h2>
-            </div>
-            <section className="icon-bar">
-              <div id="icons-container">
-                <ul>
-                  <li id="type" className="icons">
-                    <span>{this.state.property.type}</span>
-                    <span>{this.state.property.area}</span>
-                  </li>
-                  <li id="bedrooms" className="icons">
-                    <span>Bedrooms</span>
-                    <span>{this.state.property.bedrooms}</span></li>
-                  <li id="sleeps" className="icons">
-                    <span>Sleeps</span>
-                    <span>{this.state.property.sleeps}</span>
-                  </li>
-                  <li id="bathrooms" className="icons">
-                    <span>Bathrooms</span>
-                    <span>{this.state.property.bathrooms}</span>
-                  </li>
-                  <li id="halfbaths" className="icons">
-                    <span>Half Baths</span>
-                    <span>{this.state.property.halfBaths}</span>
-                  </li>
-                  <li id="minstay" className="icons">
-                    <span>Min Stay</span>
-                    <span>{this.state.property.minStay}</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="description-container">
-                <h3 id='brief'>
-                  {this.state.property.brief}
-                </h3>
-                <div className="description-box">
-                  <p id="description">
-                    {this.state.property.description}
-                  </p>
-                </div>
-              </div>
-            </section>
-          </div>
+          <NavBar/>
+          <Headline property={this.state.property}/>
+          <Icons property={this.state.property}/>
+          <Description property={this.state.property} handleClick={this.handleClick}/>
         </div>)
         }
       </div>
-
     );
   }
 }
