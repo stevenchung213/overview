@@ -15,7 +15,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'app.js',
+    filename: 'overview.js',
     path: __dirname + '/public'
   }
 };
