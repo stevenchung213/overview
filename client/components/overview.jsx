@@ -42,14 +42,14 @@ export default class Overview extends React.Component {
   componentDidMount() {
     let propertyID = Number(window.location.pathname.replace(/\//, ''));
     if (propertyID > 0) {
-      $.get('/listings/' + propertyID, result => {
-        console.log(result)
-        this.setState({property: result[0], init: true})
-      })
+      $.get('http://localhost:3001/listings/' + propertyID, result => {
+        console.log(result);
+        this.setState({property: result[0], init: true});
+      });
     } else {
-      $.get('/listings', result => {
-        console.log('success ', result)
-        this.setState({property: result[0], init: true})
+      $.get('http://localhost:3001/listings', result => {
+        console.log('success ', result);
+        this.setState({property: result[0], init: true});
       }, 'json');
     }
   }

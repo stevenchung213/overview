@@ -62,11 +62,11 @@ li a {
 }
 
 #nav-bar {
-    position: fixed;
+    position: relative;
     top: 0;
     border-bottom: 2px;
     z-index: 1000;
-    width: 65%;
+    width: 100%;
 }
 
 .nav-bar-list {
@@ -116,14 +116,14 @@ li a {
 #minimap {
     float: left;
     padding-right: 1em;
-    background: url('minimap.png') no-repeat;
+    background: url('https://s3-us-west-1.amazonaws.com/fec-su-casa/minimap.png') no-repeat;
     height: 79px;
     width: 79px;
 }
 
 #map-pin {
     margin-left: 95px;
-    background: url('mappin.PNG') no-repeat;
+    background: url('https://s3-us-west-1.amazonaws.com/fec-su-casa/mappin.PNG') no-repeat;
 }
 
 #location {
@@ -170,7 +170,7 @@ p {
 
 #type {
     background-size: 50%;
-    background: url('type.png') no-repeat top center;
+    background: url('https://s3-us-west-1.amazonaws.com/fec-su-casa/type.png') no-repeat top center;
     justify-content: center;
     height: 5em;
 }
@@ -185,7 +185,7 @@ p {
 
 #bedrooms {
     background-size: 35%;
-    background: url('bedrooms.png') no-repeat top center;
+    background: url('https://s3-us-west-1.amazonaws.com/fec-su-casa/bedrooms.png') no-repeat top center;
     justify-content: center;
     height: 5em;
 }
@@ -200,7 +200,7 @@ p {
 
 #sleeps {
     background-size: 35%;
-    background: url('sleeps.png') no-repeat top center;
+    background: url('https://s3-us-west-1.amazonaws.com/fec-su-casa/sleeps.png') no-repeat top center;
     justify-content: center;
     height: 5em;
 }
@@ -215,7 +215,7 @@ p {
 
 #bathrooms {
     background-size: 35%;
-    background: url('bathrooms.png') no-repeat top center;
+    background: url('https://s3-us-west-1.amazonaws.com/fec-su-casa/bathrooms.png') no-repeat top center;
     justify-content: center;
     height: 5em;
 }
@@ -230,7 +230,7 @@ p {
 
 #halfbaths {
     background-size: 35%;
-    background: url('halfbaths.png') no-repeat top center;
+    background: url('https://s3-us-west-1.amazonaws.com/fec-su-casa/halfbaths.png') no-repeat top center;
     justify-content: center;
     height: 5em;
 }
@@ -245,7 +245,7 @@ p {
 
 #minstay {
     background-size: 35%;
-    background: url('minstay.png') no-repeat top center;
+    background: url('https://s3-us-west-1.amazonaws.com/fec-su-casa/minstay.png') no-repeat top center;
     justify-content: center;
     height: 5em;
 }
