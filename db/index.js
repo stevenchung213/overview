@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost/fec', { useNewUrlParser: true }).then(console.log('mongoose connected!'));
-mongoose.connect('mongodb+srv://steve:102884@su-casa-t1n9r.mongodb.net/fec', { useNewUrlParser: true }).then(console.log('mongoose' +
+const mongoURI = 'mongodb+srv://steve:102884@su-casa-t1n9r.mongodb.net/fec';
+mongoose.connect(mongoURI, { useNewUrlParser: true }).then(console.log('mongoose' +
   ' connected!'));
 let db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('Mongo DB is connected and running');
+  console.log('Mongo DB is connected and running @ ' + mongoURI);
 });
 
 let overviewSchema = mongoose.Schema({
