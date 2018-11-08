@@ -45,12 +45,12 @@ export default class Overview extends React.Component {
     let propertyID = Number(window.location.pathname.replace(/\//, ''));
     if (propertyID > 0) {
       // $.get(`http://localhost:${port}/listings/` + propertyID, result => {
-      $.get(`http://su-casa-overview.us-west-1.elasticbeanstalk.com:${port}/listings/` + propertyID, result => {
+      $.get('http://su-casa-overview.us-west-1.elasticbeanstalk.com/listings/' + propertyID, result => {
         console.log(result);
         this.setState({property: result[0], init: true});
       });
     } else {
-      $.get(`http://su-casa-overview.us-west-1.elasticbeanstalk.com:${port}/listings`, result => {
+      $.get('http://su-casa-overview.us-west-1.elasticbeanstalk.com/listings', result => {
       // $.get(`http://localhost:${port}/listings`, result => {
         console.log('success ', result);
         this.setState({property: result[0], init: true});
