@@ -2,11 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {overview} = require('../db/index.js');
 const path = require('path');
-const normalizePort = require('normalize-port');
+// const normalizePort = require('normalize-port');
 
 const app = express();
 // const port = 3001;
-const port = normalizePort(process.env.PORT || '8081');
+const port = 8081;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname + '/../public')));
