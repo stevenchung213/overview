@@ -31,6 +31,7 @@ export default class Overview extends React.Component {
     });
 
     $('#view-more').click(e => {
+      e.preventDefault();
       e.stopPropagation();
       $('p').animate({
         'height': p
