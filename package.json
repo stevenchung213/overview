@@ -22,7 +22,8 @@
     "mongoose": "^5.3.6",
     "normalize-port": "^1.0.0",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",

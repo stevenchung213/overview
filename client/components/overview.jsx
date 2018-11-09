@@ -6,8 +6,6 @@ import Icons from './Icons.jsx';
 import Description from './Description.jsx';
 
 
-const port = 8081;
-
 export default class Overview extends React.Component {
   constructor() {
     super();
