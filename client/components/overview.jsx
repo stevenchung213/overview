@@ -38,7 +38,6 @@ export default class Overview extends React.Component {
       });
       $('#view-more').text('View less');
     });
-
   }
 
   componentDidMount() {
