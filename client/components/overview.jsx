@@ -18,7 +18,8 @@ export default class Overview extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(e) {
+    e.preventDefault();
     let p = $('p')[0].scrollHeight;
 
     $(document).click(e => {
