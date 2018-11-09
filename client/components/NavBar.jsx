@@ -13,7 +13,7 @@ const NavBar = () => {
         </ul>
       </div>
     </React.Fragment>
-  )
+  );
 };
 
 export default NavBar;

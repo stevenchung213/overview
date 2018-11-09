@@ -11,7 +11,7 @@ const Description = ({property, handleClick}) => {
           <p id="description">
             {property.description}
           </p>
-          <a id="view-more" href="javascript:void(0)" onClick={() => {
+          <a id="view-more" href="#" onClick={() => {
             handleClick();
           }}>View more</a>
         </div>
