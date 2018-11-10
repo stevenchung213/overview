@@ -11,9 +11,9 @@ const Description = ({property, handleClick}) => {
           <p id="description">
             {property.description}
           </p>
-          <a id="view-more" href="#" onClick={() => {
-            handleClick();
-          }}>View more</a>
+          <a id="view-more" href="#" onClick={handleClick}>
+            View more
+          </a>
         </div>
       </div>
     </React.Fragment>

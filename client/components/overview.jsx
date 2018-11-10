@@ -18,11 +18,11 @@ export default class Overview extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(e) {
 
     let p = $('p')[0].scrollHeight;
 
-    $(document).click(e => {
+    $('document').click(() => {
       e.stopPropagation();
       $('p').animate({
         'height': '165px'
@@ -31,7 +31,7 @@ export default class Overview extends React.Component {
       return false;
     });
 
-    $('#view-more').click(e => {
+    $('#view-more').click(() => {
       e.preventDefault();
       e.stopPropagation();
       $('p').animate({
