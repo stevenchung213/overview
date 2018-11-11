@@ -4,6 +4,12 @@ import NavBar from './NavBar.jsx';
 import Headline from './Headline.jsx';
 import Icons from './Icons.jsx';
 import Description from './Description.jsx';
+import Owner from './Owner.jsx';
+import Amenities from './Amenities.jsx';
+import General from './General.jsx';
+import Kitchen from './Kitchen.jsx';
+import Entertainment from './Entertainment.jsx';
+import Notes from './Notes.jsx';
 
 
 export default class Overview extends React.Component {
@@ -23,7 +29,7 @@ export default class Overview extends React.Component {
     let p = $('p')[0].scrollHeight;
 
     $('document').click(() => {
-      e.stopPropagation();
+      e.preventDefault();
       $('p').animate({
         'height': '165px'
       });
@@ -52,7 +58,7 @@ export default class Overview extends React.Component {
       });
     } else {
       $.get('http://su-casa-overview.us-west-1.elasticbeanstalk.com/listings', result => {
-      // $.get(`http://localhost:${port}/listings`, result => {
+        // $.get(`http://localhost:${port}/listings`, result => {
         console.log('success ', result);
         this.setState({property: result[0], init: true});
       }, 'json');
@@ -63,12 +69,20 @@ export default class Overview extends React.Component {
     return (
       <div>
         {this.state.init &&
-        (<div id="main-container">
-          <NavBar/>
-          <Headline property={this.state.property}/>
-          <Icons property={this.state.property}/>
-          <Description property={this.state.property} handleClick={this.handleClick}/>
-        </div>)
+        (
+          <div id="main-container">
+            <NavBar/>
+            <Headline property={this.state.property}/>
+            <Icons property={this.state.property}/>
+            <Description property={this.state.property} handleClick={this.handleClick}/>
+            <Owner property={this.state.property}/>
+            <Amenities property={this.state.property}/>
+            <General property={this.state.property}/>
+            <Kitchen property={this.state.property}/>
+            <Entertainment property={this.state.property}/>
+            <Notes property={this.state.property}/>
+          </div>
+        )
         }
       </div>
     );

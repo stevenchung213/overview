@@ -13,7 +13,7 @@
     "start": "node server/index.js",
     "seed": "node db/seed.js",
     "test": "jest --config ./test/jest.config.js",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production --watch"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

@@ -25,7 +25,12 @@ let overviewSchema = mongoose.Schema({
   brief: String,
   description: String,
   owner: String,
-  phone: String
+  phone: String,
+  amenities: Array,
+  general: Array,
+  kitchen: Array,
+  entertainment: Array,
+  notes: Array
 });
 
 const overview = mongoose.model('overview', overviewSchema);
