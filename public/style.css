@@ -1,3 +1,9 @@
+/*sidebar*/
+
+
+
+/*overview*/
+
 body{
     font-family: 'Lato', sans-serif;
 }
@@ -154,9 +160,9 @@ li a {
     width: auto;
 }
 
-p {
+#description {
     display: block;
-    height: 160px;
+    height: 162px;
     color: #83898e;
     max-width: 100%;
     margin-right: 2em;
@@ -272,5 +278,163 @@ p {
     text-decoration: none;
     color: dodgerblue;
     padding-bottom: 3em;
+    cursor: pointer;
 }
 
+#amenities {
+    font-size: 23px;
+    color: #40464b;
+    padding-bottom: 20px;
+    border-color: #d0d6db;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+#general, #kitchen, #entertainment {
+    font-size: 18px;
+    color: #40464b;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+#amenities-list, #general-list, #kitchen-list, #entertainment-list {
+    column-count: 3;
+    column-width: 50px;
+    column-gap: 32px;
+    padding-bottom: 20px;
+    border-color: #d0d6db;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.amenities-listings, .general-listings, .kitchen-listings, .entertainment-listings {
+    font-family: 'Lato', sans-serif;
+    color: #71777c;
+    text-align: left;
+    display: list-item;
+    width: 100%;
+    padding-bottom: 16px;
+}
+
+#owner-container {
+    position: relative;
+    padding-bottom: 30px;
+    border-color: #d0d6db;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+#owner-title {
+    font-size: 17px;
+    color: #40464b;
+    padding-top: 20px;
+}
+#owner-name {
+    font-family: 'Lato', sans-serif;
+    color: #40464b;
+    text-align: left;
+}
+#owner-since {
+    font-family: 'Lato', sans-serif;
+    color: #71777c;
+    font-size: 13px;
+    text-align: left;
+    margin-top: -15px;
+}
+#owner-contact {
+    position: relative;
+    margin-left: 75%;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    background-color: white;
+    color: royalblue;
+    border-color: #d0d6db;
+    padding: 14px 36px;
+    border-radius: 100px;
+    transition: all .25s ease-in-out;
+}
+#owner-contact:hover {
+    border-color: royalblue;
+}
+
+
+/*reviews*/
+/*.smaller-font {*/
+    /*font-size: 14px;*/
+    /*padding-top: 30px;*/
+/*}*/
+
+/*.bold-me {*/
+    /*padding-top: 10px;*/
+    /*font-size: 17px;*/
+    /*color: #70767b;*/
+/*}*/
+
+/*.description-container {*/
+    /*padding-top: 1em;*/
+/*}*/
+
+/*#view-more {*/
+    /*text-decoration: none;*/
+    /*color: dodgerblue;*/
+    /*padding-bottom: 3em;*/
+/*}*/
+
+/*#review-container {*/
+    /*box-sizing: border-box;*/
+    /*color: rgb(94, 109, 119);*/
+    /*height: auto;*/
+    /*overflow-wrap: break-word;*/
+    /*text-size-adjust: 100%;*/
+    /*white-space: pre-line;*/
+    /*width: 840px;*/
+    /*word-break: break-word;*/
+    /*column-rule-color: rgb(94, 109, 119);*/
+    /*perspective-origin: 420px 194px;*/
+    /*transform-origin: 420px 194px;*/
+    /*caret-color: rgb(94, 109, 119);*/
+    /*border-top: 1px solid rgb(211, 216, 222);*/
+    /*border-bottom: 1px solid rgb(211, 216, 222);*/
+    /*font: normal normal 400 normal 16px / 24px Lato, Arial, "Helvetica Neue", sans-serif;*/
+    /*padding-bottom: 20px;*/
+/*}*/
+
+/*#rating-stayed-container {*/
+    /*display: flex;*/
+/*}*/
+
+/*#stayed {*/
+    /*margin-left: 5px;*/
+/*}*/
+
+/*#reviewer-name {*/
+    /*font-weight: 700;*/
+/*}*/
+
+/*#reviewer-location {*/
+    /*margin-left: 5px;*/
+/*}*/
+
+/*#customer-review-container {*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+/*}*/
+
+/*#sixty-reviews-title {*/
+    /*font-size: 22px;*/
+    /*font-weight: 700;*/
+/*}*/
+
+/*#stars-average-container {*/
+    /*display: flex;*/
+/*}*/
+
+/*#average-description {*/
+    /*margin-left: 10px;*/
+/*}*/
+
+/*.review-status-container {*/
+    /*display: flex;*/
+    /*margin: 35px 0 35px 0;*/
+    /*justify-content: space-between;*/
+/*}*/

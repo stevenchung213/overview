@@ -10,7 +10,23 @@ import General from './General.jsx';
 import Kitchen from './Kitchen.jsx';
 import Entertainment from './Entertainment.jsx';
 import Notes from './Notes.jsx';
+import CustomerReviews from './CustomerReviews.jsx';
 
+//
+// const example = {
+//   title: 'Magical . . . Off Central Park West',
+//   rating: '5',
+//   stayedDate: 'Sep 2018',
+//   name: 'Catherine A.',
+//   location: 'Seattle, WA',
+//   review: 'A quiet, mid-Central Park location, Subway Stops, Groceries, Spirits, Restaurants,' +
+//     ' Museums and a \'killer\' Bakery are just steps from this simply stunning home. Hallmarks' +
+//     ' of our Home Away from Home . . . a beautiful decor, exceptional household amenities, comfy' +
+//     ' beds and the most accommodating, organized Hosts we have ever encountered \n\n We had a' +
+//     ' terrific vacation and aside from the fun in \'visiting the center of the universe\', our' +
+//     ' accommodations were wonderful.',
+//   postedDate: 'Oct 15, 2018',
+// };
 
 export default class Overview extends React.Component {
   constructor() {
@@ -18,34 +34,30 @@ export default class Overview extends React.Component {
 
     this.state = {
       init: false,
-      property: null
+      property: null,
+      // reviews: example,
+      expanded: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
-
-    let p = $('p')[0].scrollHeight;
-
-    $('document').click(() => {
-      e.preventDefault();
-      $('p').animate({
-        'height': '165px'
-      });
-      $('#view-more').text('View more');
-      return false;
-    });
-
-    $('#view-more').click(() => {
-      e.preventDefault();
-      e.stopPropagation();
-      $('p').animate({
+  handleClick() {
+    if (!this.state.expanded) {
+      let p = $('#description')[0].scrollHeight;
+      console.log(p)
+      $('#description').animate({
         'height': p
       });
       $('#view-more').text('View less');
-      return false;
-    });
+      this.setState({expanded: true});
+    } else {
+      $('#description').animate({
+        'height': '162px'
+      });
+      $('#view-more').text('View more');
+      this.setState({expanded: false});
+    }
   }
 
   componentDidMount() {
@@ -80,7 +92,7 @@ export default class Overview extends React.Component {
             <General property={this.state.property}/>
             <Kitchen property={this.state.property}/>
             <Entertainment property={this.state.property}/>
-            <Notes property={this.state.property}/>
+            {/*<Notes property={this.state.property}/>*/}
           </div>
         )
         }

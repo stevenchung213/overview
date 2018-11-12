@@ -3,16 +3,16 @@ import React from 'react';
 const Notes = ({property}) => {
   return (
     <React.Fragment>
-      <div className="Notes-container">
-        <h2 id="Notes">
+      <div className="notes-container">
+        <h2 id="notes">
           Notes
         </h2>
-        <div className="Notes-box">
-          <ul id="Notes-list">
+        <div className="notes-box">
+          <ul id="notes-list">
             {property.notes.map(item => {
               return (
-                <li className="Notes-listings">
-                  <div className="Notes-singular">
+                <li className="notes-listings">
+                  <div className="notes-singular">
                     {item}
                   </div>
                 </li>
